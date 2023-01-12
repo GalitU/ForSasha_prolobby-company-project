@@ -1,4 +1,10 @@
-﻿using ProLobbyCompanyProject.Dal;
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	SocialActivists\DSSocialActivistsUpdate.cs
+//
+// summary:	Implements the ds social activists update class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using ProLobbyCompanyProject.Dal;
 using ProLobbyCompanyProject.Dal.SqlQueryClasses;
 using ProLobbyCompanyProject.Model;
 using System;
@@ -10,9 +16,30 @@ using System.Threading.Tasks;
 
 namespace ProLobbyCompanyProject.Data.Sql.SocialActivists
 {
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   The ds social activists update. </summary>
+    ///
+    /// <remarks>   Sasha Pavlovski, 1/12/2023. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
     public class DSSocialActivistsUpdate
     { 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Default constructor. </summary>
+        ///
+        /// <remarks>   Sasha Pavlovski, 1/12/2023. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         public DSSocialActivistsUpdate() { }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Updates the new data. </summary>
+        ///
+        /// <remarks>   Sasha Pavlovski, 1/12/2023. </remarks>
+        ///
+        /// <param name="command">      The command. </param>
+        /// <param name="newUserData">  Information describing the new user. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public void UpdateNewData(System.Data.SqlClient.SqlCommand command, object newUserData)
         {
@@ -35,8 +62,16 @@ namespace ProLobbyCompanyProject.Data.Sql.SocialActivists
             int rows = command.ExecuteNonQuery();
         }
     
+        /// <summary>   The social activists id]. </summary>
         string insertUpdate = "update [dbo].[TBSocialActivists] set [FirstName] = @FirstName , [LastName] = @LastName, [Address] = @Address,\r\n[Email]=@Email, [Twitter_user] = @Twitter_user,[Phone_number] = @Phone_number\r\nwhere [SocialActivists_Id] =  @SocialActivists_Id";
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Updates the users data described by NewData. </summary>
+        ///
+        /// <remarks>   Sasha Pavlovski, 1/12/2023. </remarks>
+        ///
+        /// <param name="NewData">  Information describing the new. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public void UpdateUsersData(TBSocialActivists NewData)
         {
